@@ -54,7 +54,7 @@ ROOT_URLCONF = 'Ride_Fare_Comparison.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'ridefarecomparison/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
