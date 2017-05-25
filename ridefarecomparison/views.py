@@ -2,4 +2,5 @@ from django.shortcuts import render, HttpResponse
 
 # Create your views here.
 def index(request):
-    return render(request, "home.html")
+    foo = "Hello Zachery!"
+    return render(request, "home.html", {'message': foo})
