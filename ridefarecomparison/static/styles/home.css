@@ -2,12 +2,12 @@
   position: relative;
   width: 480px;
 }
-#autocomplete {
+/*#autocomplete, #autocomplete2 {
   position: absolute;
   top: 0px;
   left: 0px;
   width: 99%;
-}
+}*/
 .label {
   text-align: right;
   font-weight: bold;
@@ -46,4 +46,12 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+.location {
+  display: block !important;
+  margin-bottom: 10px;
+  margin-left: 1%;
+}
+#autocomplete, #autocomplete2 {
+  width: 98%;
 }
