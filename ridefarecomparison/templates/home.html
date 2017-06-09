@@ -4,8 +4,8 @@
 {% block content %}
 
 <!DOCTYPE html>
-<form action="results" method="get">
-
+<form  id="locations" action="results" method="post">
+    {% csrf_token %}
     <head>
       <title>Place Autocomplete Address Form</title>
       <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -27,6 +27,9 @@
       <script src="https://maps.googleapis.com/maps/api/js?key={{google_api}}&libraries=places&callback=initAutocomplete"
           async defer></script>
     </body>
+
+    <button type="button" class="btn btn-success" onclick="Submit();">Submit Location</button>
+
 </form>
 
 

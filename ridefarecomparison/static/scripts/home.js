@@ -45,3 +45,7 @@ function geolocate() {
     });
   }
 }
+
+function Submit(){
+  $("#locations").submit();
+}
