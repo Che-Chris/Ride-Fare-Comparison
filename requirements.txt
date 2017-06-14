@@ -9,7 +9,9 @@ idna==2.5
 packaging==16.8
 pyparsing==2.2.0
 pytz==2017.2
+PyYAML==3.12
 ratelim==0.1.6
 requests==2.18.1
 six==1.10.0
+uber-rides==0.4.1
 urllib3==1.21.1

@@ -23,6 +23,6 @@ def results(request):
     pickup_lat, pickup_long = geocoder.google(pickup).latlng
     dropoff_lat, dropoff_long = geocoder.google(dropoff).latlng
 
-    uber_prices = getUberPrice(pickup_lat, pickup_long, dropoff_lat, dropoff_long)
+    uber_prices = getUberPrice(pickup_lat, pickup_long, dropoff_lat, dropoff_long, seats)
 
     return render(request, "results.html", {'uber_prices': uber_prices})
