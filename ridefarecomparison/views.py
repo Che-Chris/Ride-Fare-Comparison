@@ -18,6 +18,7 @@ def index(request):
 def results(request):
     pickup = request.POST.get("PickupLocation")
     dropoff = request.POST.get("DropoffLocation")
+    seats = request.POST.get("SeatCount")
 
     pickup_lat, pickup_long = geocoder.google(pickup).latlng
     dropoff_lat, dropoff_long = geocoder.google(dropoff).latlng

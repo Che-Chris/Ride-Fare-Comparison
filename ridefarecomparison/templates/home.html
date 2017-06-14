@@ -23,6 +23,11 @@
         <input type="text" name="DropoffLocation" onfocus="geolocate()" placeholder="Enter your dropoff location" id="autocomplete2" autocomplete="off" />
       </label>
 
+      <label for="seats" class = "location"> Enter number of seats
+        <input type="text" name ="SeatCount" value="1">
+      </label>
+
+
       <script src="{% static '/scripts/home.js' %}"></script>
       <script src="https://maps.googleapis.com/maps/api/js?key={{google_api}}&libraries=places&callback=initAutocomplete"
           async defer></script>
