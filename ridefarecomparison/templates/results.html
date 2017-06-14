@@ -4,16 +4,14 @@
 
 {% block content %}
 
-{{ uber_prices }}
-<br>
-{{ pickup }}
-<br>
-{{ dropoff }}
-<br>
-{{ pickup_lat }},{{ pickup_long }}
-<br>
-{{ dropoff_lat}},{{ dropoff_long}}
-<br>
-{{ seats }}
+{% for entry in uber_prices %}
+  <div class="uber">
+    {% for key, value in entry.items %}
+      <div class="col-sm-4">
+        {{ key }} - {{ value }}
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}
 
 {% endblock %}
