@@ -1,4 +1,3 @@
-import requests
 import geocoder
 
 from django.shortcuts import render, HttpResponse
