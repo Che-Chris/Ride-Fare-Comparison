@@ -1,6 +1,9 @@
+import requests
+
 from django.shortcuts import render, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from . import config
+from functions import *
 
 # Create your views here.
 def index(request):
