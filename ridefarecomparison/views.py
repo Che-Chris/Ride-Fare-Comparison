@@ -15,7 +15,10 @@ def results(request):
     pickup = request.POST.get("PickupLocation")
     dropoff = request.POST.get("DropoffLocation")
 
-    geo_pickup = geocoder.google(pickup).latlng
-    geo_dropoff = geocoder.google(dropoff).latlng
+    pickup_lat, pickup_long = geocoder.google(pickup).latlng
+    dropoff_lat, dropoff_long = geocoder.google(dropoff).latlng
 
-    return render(request, "results.html", {'pickup': pickup, 'dropoff': dropoff, 'geo_pickup': geo_pickup, 'geo_dropoff': geo_dropoff})
+
+
+    return render(request, "results.html", {'pickup': pickup, 'dropoff': dropoff, 'pickup_lat': pickup_lat, 'pickup_long': pickup_long
+        , 'dropoff_lat': dropoff_lat, 'dropoff_long': dropoff_long})
