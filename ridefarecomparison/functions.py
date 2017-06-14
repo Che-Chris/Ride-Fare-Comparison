@@ -1,9 +1,3 @@
-import os
-import sys
-
-file_dir = os.path.dirname(__file__)
-sys.path.append(file_dir)
-
 from uber_rides.session import Session
 from uber_rides.client import UberRidesClient
 from config import *

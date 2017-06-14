@@ -1,9 +1,4 @@
 import geocoder
-import os
-import sys
-
-file_dir = os.path.dirname(__file__)
-sys.path.append(file_dir)
 
 from django.shortcuts import render, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
