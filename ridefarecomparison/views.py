@@ -17,7 +17,9 @@ def results(request):
     pickup_lat, pickup_long = geocoder.google(pickup).latlng
     dropoff_lat, dropoff_long = geocoder.google(dropoff).latlng
 
+    seats = request.POST.get("SeatCount")
+
 
 
     return render(request, "results.html", {'pickup': pickup, 'dropoff': dropoff, 'pickup_lat': pickup_lat, 'pickup_long': pickup_long
-        , 'dropoff_lat': dropoff_lat, 'dropoff_long': dropoff_long})
+        , 'dropoff_lat': dropoff_lat, 'dropoff_long': dropoff_long, 'seats':seats})
