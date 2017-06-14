@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
-from . import config
 from django.views.decorators.csrf import csrf_exempt
+from . import config
 
 # Create your views here.
 def index(request):
@@ -8,5 +8,6 @@ def index(request):
 
 @csrf_exempt
 def results(request):
-    form = request.POST.get("PickupLocation")
-    return render(request, "results.html", {'location': form})
+    pickup = request.POST.get("PickupLocation")
+    dropoff = request.POST.get("DropoffLocation")
+    return render(request, "results.html", {'pickup': pickup, 'dropoff': dropoff})
