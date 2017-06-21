@@ -1,27 +1,30 @@
-{% extends 'base.html'%}
-
+{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
 
-{% for entry in uber_prices %}
-  <div class="uber">
-    {% for key, value in entry.items %}
-      <div class="col-sm-4">
-        {{ key }} - {{ value }}
+<body>
+  <div>
+    {% for entry in uber_prices %}
+      <div class="uber">
+        {% for key, value in entry.items %}
+          <div class="col-sm-4">
+            {{ key }} - {{ value }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+
+    {% for entry in lyft_prices %}
+      <div class="lyft">
+        {% for key, value in entry.items %}
+          <div class="col-sm-4">
+            {{ key }} - {{ value }}
+          </div>
+        {% endfor %}
       </div>
     {% endfor %}
   </div>
-{% endfor %}
-
-{% for entry in lyft_prices %}
-  <div class="lyft">
-    {% for key, value in entry.items %}
-      <div class="col-sm-4">
-        {{ key }} - {{ value }}
-      </div>
-    {% endfor %}
-  </div>
-{% endfor %}
-
+  <script src="{% static '/scripts/results.js' %}"></script>
+</body>
 {% endblock %}

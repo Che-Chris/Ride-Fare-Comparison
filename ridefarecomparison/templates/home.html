@@ -3,7 +3,6 @@
 
 {% block content %}
 
-<!DOCTYPE html>
 <form  id="locations" action="results" method="post">
     {% csrf_token %}
     <head>
@@ -26,16 +25,13 @@
       <label for="seats" class = "location"> Enter number of seats
         <input type="text" name ="SeatCount" value="1">
       </label>
-
-
-      <script src="{% static '/scripts/home.js' %}"></script>
-      <script src="https://maps.googleapis.com/maps/api/js?key={{google_api}}&libraries=places&callback=initAutocomplete"
-          async defer></script>
     </body>
 
     <button type="button" class="btn btn-success" onclick="Submit();">Submit Location</button>
-
 </form>
 
+<script src="{% static '/scripts/home.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{ google_api }}&libraries=places&callback=initAutocomplete"
+    async defer></script>
 
 {% endblock %}
