@@ -3,9 +3,66 @@
 
 {% block content %}
 
+<link rel="stylesheet" type="text/css" href="{% static '/styles/results.css' %}">
+
 <body>
   <div>
-    {% for entry in uber_prices %}
+    <div id="uber" class="col-sm-6">
+      {% for entry in uber_prices %}
+          {% if forloop.last %}
+            <div class="data">
+              {% for key, value in entry.items %}
+                <div>
+                  {{ value }}
+                </div>
+              {% endfor %}
+            </div>
+          {% else %}
+          <div class="data">
+            {% for key, value in entry.items %}
+              {% if forloop.last %}
+                <div class="data_last">
+                  {{ value }}
+                </div>
+              {% else %}
+                <div>
+                  {{ value }}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          {% endif %}
+      {% endfor %}
+    </div>
+
+    <div id="lyft" class="col-sm-6">
+      {% for entry in lyft_prices %}
+          {% if forloop.last %}
+            <div class="data">
+              {% for key, value in entry.items %}
+                <div>
+                  {{ value }}
+                </div>
+              {% endfor %}
+            </div>
+          {% else %}
+          <div class="data">
+            {% for key, value in entry.items %}
+              {% if forloop.last %}
+                <div class="data_last">
+                  {{ value }}
+                </div>
+              {% else %}
+                <div>
+                  {{ value }}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          {% endif %}
+      {% endfor %}
+    </div>
+    <!-- {% for entry in uber_prices %}
       <div class="uber">
         {% for key, value in entry.items %}
           <div class="col-sm-4">
@@ -23,7 +80,7 @@
           </div>
         {% endfor %}
       </div>
-    {% endfor %}
+    {% endfor %} -->
   </div>
 </body>
 {% endblock %}

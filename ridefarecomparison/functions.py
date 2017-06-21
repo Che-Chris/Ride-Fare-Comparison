@@ -20,7 +20,7 @@ def getUberPrices(start_latitude, start_longitude, end_latitude, end_longitude, 
     results = []
     for entry in estimate:
         tempdict = collections.OrderedDict()
-        tempdict['display_name'] = entry['localized_display_name']
+        tempdict['ride_type'] = entry['localized_display_name']
         tempdict['estimate'] = entry['estimate']
         minutes = entry['duration']/60
         seconds = entry['duration']%60
