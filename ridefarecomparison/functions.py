@@ -1,4 +1,5 @@
 import collections
+import math
 
 from uber_rides.session import Session as Uber_Session
 from uber_rides.client import UberRidesClient
@@ -21,7 +22,9 @@ def getUberPrices(start_latitude, start_longitude, end_latitude, end_longitude, 
         tempdict = collections.OrderedDict()
         tempdict['display_name'] = entry['localized_display_name']
         tempdict['estimate'] = entry['estimate']
-        tempdict['duration'] = entry['duration']
+        minutes = entry['duration']/60
+        seconds = entry['duration']%60
+        tempdict['duration'] = str(math.trunc(minutes)) +' minutes '+str(math.trunc(seconds))+' seconds'
         results.append(tempdict)
 
     return results
@@ -39,8 +42,10 @@ def getLyftPrices(start_lat, start_lng, end_lat, end_lng):
     for entry in estimate:
         tempdict = collections.OrderedDict()
         tempdict['ride_type'] = entry['ride_type']
-        tempdict['estimate'] = entry['estimated_cost_cents_min']
-        tempdict['duration'] = entry['estimated_duration_seconds']
+        tempdict['estimate'] = '$'+ str(math.trunc(entry['estimated_cost_cents_min']/100))
+        minutes = entry['estimated_duration_seconds']/60
+        seconds = entry['estimated_duration_seconds']%60
+        tempdict['duration'] = str(math.trunc(minutes)) +' minutes '+str(math.trunc(seconds))+' seconds'
         results.append(tempdict)
 
     return results
